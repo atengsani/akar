@@ -1,1 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menyederhanakan Bentuk Akar - Matematika Kelas 10 SMK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .math-expression {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+        }
+        .sqrt-symbol {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1e40af;
+            position: relative;
+        }
+        .sqrt-large {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #1e40af;
+            position: relative;
+        }
+        .sqrt-container {
+            display: inline-block;
+            position: relative;
+            margin: 0 2px;
+        }
+        .sqrt-container::before {
+            content: '√';
+            font-family: 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1e40af;
+            position: absolute;
+            left: -2px;
+            top: -2px;
+        }
+        .sqrt-container::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 18px;
+            right: -2px;
+            height: 2px;
+            background-color: #1e40af;
+            border-radius: 1px;
+        }
+        .sqrt-large-container {
+            display: inline-block;
+            position: relative;
+            margin: 0 2px;
+        }
+        .sqrt-large-container::before {
+            content: '√';
+            font-family: 'Times New Roman', serif;
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #1e40af;
+            position: absolute;
+            left: -2px;
+            top: -3px;
+        }
+        .sqrt-large-container::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 20px;
+            right: -2px;
+            height: 2px;
+            background-color: #1e40af;
+            border-radius: 1px;
+        }
+        .sqrt-content {
+            padding-left: 22px;
+            padding-top: 2px;
+        }
+        .sqrt-large-content {
+            padding-left: 24px;
+            padding-top: 3px;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse-correct {
+            animation: pulseGreen 0.6s ease-in-out;
+        }
+        .pulse-wrong {
+            animation: pulseRed 0.6s ease-in-out;
+        }
+        @keyframes pulseGreen {
+            0%, 100% { background-color: rgb(34, 197, 94); }
+            50% { background-color: rgb(22, 163, 74); }
+        }
+        @keyframes pulseRed {
+            0%, 100% { background-color: rgb(239, 68, 68); }
+            50% { background-color: rgb(220, 38, 38); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-full">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-indigo-800 mb-2">📐 Menyederhanakan Bentuk Akar</h1>
+            <p class="text-lg text-gray-600">Matematika Kelas 10 SMK</p>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mt-4 rounded"></div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="showSection('materi')" class="nav-btn bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                📚 Materi
+            </button>
+            <button onclick="showSection('contoh')" class="nav-btn bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                💡 Contoh Soal
+            </button>
+            <button onclick="showSection('latihan')" class="nav-btn bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                ✏️ Latihan
+            </button>
+        </nav>
+
+        <!-- Materi Section -->
+        <section id="materi" class="section-content bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-6 flex items-center">
+                📖 Pengertian dan Aturan Bentuk Akar
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">Apa itu Bentuk Akar?</h3>
+                    <p class="text-gray-700 mb-3">
+                        Bentuk akar adalah bilangan yang dinyatakan dalam bentuk <span class="sqrt-container"><span class="sqrt-content math-expression">a</span></span>, 
+                        dimana a adalah bilangan positif.
+                    </p>
+                    <p class="text-gray-700">
+                        Contoh: <span class="sqrt-container"><span class="sqrt-content math-expression">4</span></span>, <span class="sqrt-container"><span class="sqrt-content math-expression">9</span></span>, <span class="sqrt-container"><span class="sqrt-content math-expression">16</span></span>, <span class="sqrt-container"><span class="sqrt-content math-expression">18</span></span>, <span class="sqrt-container"><span class="sqrt-content math-expression">50</span></span>
+                    </p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-xl font-semibold text-green-800 mb-3">Sifat-sifat Bentuk Akar</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="font-semibold text-green-700">1. Perkalian</p>
+                            <p class="text-lg"><span class="sqrt-container"><span class="sqrt-content math-expression">a</span></span> × <span class="sqrt-container"><span class="sqrt-content math-expression">b</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(a×b)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="font-semibold text-green-700">2. Pembagian</p>
+                            <p class="text-lg"><span class="sqrt-container"><span class="sqrt-content math-expression">a</span></span> ÷ <span class="sqrt-container"><span class="sqrt-content math-expression">b</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(a÷b)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="font-semibold text-green-700">3. Pangkat</p>
+                            <p class="text-lg">(<span class="sqrt-container"><span class="sqrt-content math-expression">a</span></span>)² = <span class="math-expression">a</span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="font-semibold text-green-700">4. Faktorisasi</p>
+                            <p class="text-lg"><span class="sqrt-container"><span class="sqrt-content math-expression">(a²×b)</span></span> = <span class="math-expression">a</span><span class="sqrt-container"><span class="sqrt-content math-expression">b</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-semibold text-yellow-800 mb-3">Langkah Menyederhanakan</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li>Faktorkan bilangan di dalam akar menjadi faktor-faktor prima</li>
+                        <li>Kelompokkan faktor yang sama berpasangan</li>
+                        <li>Keluarkan faktor yang berpasangan dari dalam akar</li>
+                        <li>Kalikan faktor di luar akar dengan sisa faktor di dalam akar</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contoh Soal Section -->
+        <section id="contoh" class="section-content bg-white rounded-xl shadow-lg p-8 mb-8 hidden">
+            <h2 class="text-2xl font-bold text-green-800 mb-6 flex items-center">
+                🔍 Contoh Soal dan Pembahasan
+            </h2>
+
+            <div class="space-y-8">
+                <!-- Contoh 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 1: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">18</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                            <p class="font-semibold text-blue-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">18 = 2 × 9 = 2 × 3²</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                            <p class="font-semibold text-blue-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">18</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(2 × 3²)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                            <p class="font-semibold text-blue-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">18</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(3² × 2)</span></span> = <span class="math-expression">3</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">18</span></span> = <span class="math-expression">3</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 2: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">72</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                            <p class="font-semibold text-purple-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">72 = 8 × 9 = 2³ × 3² = 2² × 2 × 3²</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                            <p class="font-semibold text-purple-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">72</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(2² × 3² × 2)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                            <p class="font-semibold text-purple-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">72</span></span> = <span class="math-expression">2 × 3 ×</span> <span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span> = <span class="math-expression">6</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">72</span></span> = <span class="math-expression">6</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 3: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">50</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-orange-400">
+                            <p class="font-semibold text-orange-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">50 = 25 × 2 = 5² × 2</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-orange-400">
+                            <p class="font-semibold text-orange-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">50</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(5² × 2)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-orange-400">
+                            <p class="font-semibold text-orange-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">50</span></span> = <span class="math-expression">5</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">50</span></span> = <span class="math-expression">5</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 4: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">98</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-red-400">
+                            <p class="font-semibold text-red-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">98 = 49 × 2 = 7² × 2</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-red-400">
+                            <p class="font-semibold text-red-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">98</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(7² × 2)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-red-400">
+                            <p class="font-semibold text-red-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">98</span></span> = <span class="math-expression">7</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">98</span></span> = <span class="math-expression">7</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 5 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 5: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">75</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-teal-400">
+                            <p class="font-semibold text-teal-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">75 = 25 × 3 = 5² × 3</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-teal-400">
+                            <p class="font-semibold text-teal-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">75</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(5² × 3)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-teal-400">
+                            <p class="font-semibold text-teal-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">75</span></span> = <span class="math-expression">5</span><span class="sqrt-container"><span class="sqrt-content math-expression">3</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">75</span></span> = <span class="math-expression">5</span><span class="sqrt-container"><span class="sqrt-content math-expression">3</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 6 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contoh 6: Sederhanakan <span class="sqrt-large-container"><span class="sqrt-large-content math-expression text-xl">128</span></span></h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-pink-400">
+                            <p class="font-semibold text-pink-700">Langkah 1: Faktorisasi</p>
+                            <p class="math-expression">128 = 64 × 2 = 8² × 2 = (2³)² × 2 = 2⁶ × 2 = 2⁷</p>
+                            <p class="math-expression">128 = 2⁶ × 2 = (2³)² × 2 = 8² × 2</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-pink-400">
+                            <p class="font-semibold text-pink-700">Langkah 2: Substitusi</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">128</span></span> = <span class="sqrt-container"><span class="sqrt-content math-expression">(8² × 2)</span></span></p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-pink-400">
+                            <p class="font-semibold text-pink-700">Langkah 3: Sederhanakan</p>
+                            <p><span class="sqrt-container"><span class="sqrt-content math-expression">128</span></span> = <span class="math-expression">8</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                            <p class="font-bold text-green-800">Jawaban: <span class="sqrt-container"><span class="sqrt-content math-expression">128</span></span> = <span class="math-expression">8</span><span class="sqrt-container"><span class="sqrt-content math-expression">2</span></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Tambahan -->
+                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-4 flex items-center">
+                        💡 Tips Cepat Menyederhanakan
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Cari Faktor Kuadrat Sempurna</h4>
+                            <p class="text-sm text-gray-700">Ingat: 4, 9, 16, 25, 36, 49, 64, 81, 100...</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Faktorisasi Prima</h4>
+                            <p class="text-sm text-gray-700">Bagi dengan 2, 3, 5, 7, 11... sampai habis</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Kelompokkan Pangkat</h4>
+                            <p class="text-sm text-gray-700">Cari faktor dengan pangkat genap</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Periksa Hasil</h4>
+                            <p class="text-sm text-gray-700">Kuadratkan hasil untuk memverifikasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latihan Section -->
+        <section id="latihan" class="section-content bg-white rounded-xl shadow-lg p-8 mb-8 hidden">
+            <h2 class="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+                🎯 Latihan Interaktif
+            </h2>
+
+            <div class="mb-6">
+                <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                    <p class="text-purple-800 font-semibold">Skor: <span id="score">0</span>/10</p>
+                    <div class="w-full bg-purple-200 rounded-full h-2 mt-2">
+                        <div id="progress" class="bg-purple-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-container">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Soal <span id="question-number">1</span>/10</h3>
+                    <p class="text-lg mb-4">Sederhanakan: <span class="sqrt-large-container"><span id="question" class="sqrt-large-content math-expression font-bold text-blue-600 text-xl"></span></span></p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <button onclick="selectAnswer(0)" class="answer-btn bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-left transition-colors">
+                            <span id="option-0"></span>
+                        </button>
+                        <button onclick="selectAnswer(1)" class="answer-btn bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-left transition-colors">
+                            <span id="option-1"></span>
+                        </button>
+                        <button onclick="selectAnswer(2)" class="answer-btn bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-left transition-colors">
+                            <span id="option-2"></span>
+                        </button>
+                        <button onclick="selectAnswer(3)" class="answer-btn bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-left transition-colors">
+                            <span id="option-3"></span>
+                        </button>
+                    </div>
+
+                    <div id="feedback" class="hidden p-4 rounded-lg mb-4"></div>
+                    
+                    <button id="next-btn" onclick="nextQuestion()" class="hidden bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        Soal Berikutnya
+                    </button>
+                </div>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">🎉 Latihan Selesai!</h3>
+                    <p class="text-xl mb-4">Skor Akhir: <span id="final-score"></span>/10</p>
+                    <p id="grade-message" class="text-lg mb-6"></p>
+                    <button onclick="restartQuiz()" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Ulangi Latihan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 mt-12">
+            <div class="mb-4">
+                <a href="https://atengsani.github.io/akar/home.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+                    🏠 Beranda
+                </a>
+            </div>
+            <p>© 2025 by Ateng Transani, S.Pd</p>
+            <p class="text-sm mt-2">Belajar matematika jadi lebih mudah dan menyenangkan! 📚✨</p>
+        </footer>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizData = [
+            { question: "8", options: ["2√2", "4", "2√3", "√8"], correct: 0 },
+            { question: "18", options: ["3√2", "6", "2√3", "9"], correct: 0 },
+            { question: "32", options: ["4√2", "8", "2√8", "16"], correct: 0 },
+            { question: "50", options: ["5√2", "10", "25", "2√5"], correct: 0 },
+            { question: "72", options: ["6√2", "12", "8√3", "36"], correct: 0 },
+            { question: "98", options: ["7√2", "14", "49", "2√7"], correct: 0 },
+            { question: "128", options: ["8√2", "16", "64", "4√8"], correct: 0 },
+            { question: "200", options: ["10√2", "20", "100", "5√8"], correct: 0 },
+            { question: "75", options: ["5√3", "15", "25", "3√5"], correct: 0 },
+            { question: "48", options: ["4√3", "12", "24", "6√2"], correct: 0 }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        // Navigation
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.remove('hidden');
+            document.getElementById(sectionName).classList.add('fade-in');
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-offset-2');
+            });
+            event.target.classList.add('ring-2', 'ring-offset-2', 'ring-indigo-300');
+        }
+
+        // Quiz functions
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question').textContent = question.question;
+            
+            for (let i = 0; i < 4; i++) {
+                document.getElementById(`option-${i}`).textContent = question.options[i];
+            }
+            
+            // Reset answer buttons
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
+                btn.classList.add('bg-blue-100', 'hover:bg-blue-200');
+                btn.disabled = false;
+            });
+            
+            document.getElementById('feedback').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            answered = false;
+        }
+
+        function selectAnswer(selectedIndex) {
+            if (answered) return;
+            
+            answered = true;
+            const question = quizData[currentQuestion];
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            // Disable all buttons
+            buttons.forEach(btn => btn.disabled = true);
+            
+            // Show correct answer
+            buttons[question.correct].classList.remove('bg-blue-100');
+            buttons[question.correct].classList.add('bg-green-500', 'text-white', 'pulse-correct');
+            
+            // Show feedback
+            const feedback = document.getElementById('feedback');
+            feedback.classList.remove('hidden');
+            
+            if (selectedIndex === question.correct) {
+                score++;
+                feedback.className = 'bg-green-100 border border-green-400 text-green-700 p-4 rounded-lg mb-4';
+                feedback.innerHTML = '✅ Benar! Jawaban yang tepat adalah ' + question.options[question.correct];
+            } else {
+                buttons[selectedIndex].classList.remove('bg-blue-100');
+                buttons[selectedIndex].classList.add('bg-red-500', 'text-white', 'pulse-wrong');
+                feedback.className = 'bg-red-100 border border-red-400 text-red-700 p-4 rounded-lg mb-4';
+                feedback.innerHTML = '❌ Salah. Jawaban yang benar adalah ' + question.options[question.correct];
+            }
+            
+            // Update score and progress
+            document.getElementById('score').textContent = score;
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            
+            // Show next button or finish
+            if (currentQuestion < quizData.length - 1) {
+                document.getElementById('next-btn').classList.remove('hidden');
+            } else {
+                setTimeout(showResult, 1500);
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
+            document.getElementById('final-score').textContent = score;
+            
+            let message = '';
+            if (score >= 9) message = 'Luar biasa! Kamu sangat menguasai materi ini! 🌟';
+            else if (score >= 7) message = 'Bagus sekali! Terus berlatih ya! 👍';
+            else if (score >= 5) message = 'Cukup baik, masih perlu latihan lagi! 💪';
+            else message = 'Jangan menyerah! Pelajari materi lagi dan coba lagi! 📚';
+            
+            document.getElementById('grade-message').textContent = message;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('result-container').classList.add('hidden');
+            document.getElementById('score').textContent = '0';
+            document.getElementById('progress').style.width = '0%';
+            
+            loadQuestion();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('materi');
+            loadQuestion();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e29eab41f6fd2a',t:'MTc2MDM5ODE3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 
