@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bentuk Akar - Matematika Kelas 10 SMK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .math-example {
+            background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #0ea5e9;
+        }
+    </style>
+</head>
+<body class="min-h-full bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">📐 Bentuk Akar</h1>
+                <p class="text-xl opacity-90">Matematika Kelas 10 SMK</p>
+                <div class="mt-4 inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <span class="text-sm font-medium">Materi Dasar Aljabar</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Pengertian -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl">1</span>
+                    Pengertian Bentuk Akar
+                </h2>
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        <strong>Bentuk akar</strong> adalah suatu bentuk bilangan yang dinyatakan dalam tanda akar (√). 
+                        Bentuk akar merupakan cara lain untuk menuliskan bilangan berpangkat pecahan.
+                    </p>
+                    
+                    <div class="math-example p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Definisi Matematis:</h3>
+                        <div class="text-center text-2xl mb-4">
+                            $$\sqrt[n]{a} = a^{\frac{1}{n}}$$
+                        </div>
+                        <p class="text-gray-700">
+                            Dimana: <br>
+                            • $n$ = indeks akar (bilangan bulat positif) <br>
+                            • $a$ = bilangan yang diakarkan (radicand) <br>
+                            • $\sqrt[n]{a}$ = akar ke-n dari a
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jenis-jenis Bentuk Akar -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl">2</span>
+                    Jenis-jenis Bentuk Akar
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Akar Kuadrat -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">🔹 Akar Kuadrat</h3>
+                        <div class="text-center mb-4">
+                            <div class="text-2xl">$$\sqrt{a} = \sqrt[2]{a} = a^{\frac{1}{2}}$$</div>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Contoh:</strong></p>
+                            <p>• $\sqrt{9} = 3$</p>
+                            <p>• $\sqrt{16} = 4$</p>
+                            <p>• $\sqrt{25} = 5$</p>
+                        </div>
+                    </div>
+
+                    <!-- Akar Kubik -->
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                        <h3 class="text-xl font-semibold text-purple-800 mb-4">🔸 Akar Kubik</h3>
+                        <div class="text-center mb-4">
+                            <div class="text-2xl">$$\sqrt[3]{a} = a^{\frac{1}{3}}$$</div>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Contoh:</strong></p>
+                            <p>• $\sqrt[3]{8} = 2$</p>
+                            <p>• $\sqrt[3]{27} = 3$</p>
+                            <p>• $\sqrt[3]{64} = 4$</p>
+                        </div>
+                    </div>
+
+                    <!-- Akar ke-n -->
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
+                        <h3 class="text-xl font-semibold text-orange-800 mb-4">🔶 Akar ke-n</h3>
+                        <div class="text-center mb-4">
+                            <div class="text-2xl">$$\sqrt[n]{a} = a^{\frac{1}{n}}$$</div>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Contoh:</strong></p>
+                            <p>• $\sqrt[4]{16} = 2$</p>
+                            <p>• $\sqrt[5]{32} = 2$</p>
+                            <p>• $\sqrt[6]{64} = 2$</p>
+                        </div>
+                    </div>
+
+                    <!-- Bentuk Akar Campuran -->
+                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg border border-teal-200">
+                        <h3 class="text-xl font-semibold text-teal-800 mb-4">🔷 Bentuk Akar Campuran</h3>
+                        <div class="text-center mb-4">
+                            <div class="text-2xl">$$a\sqrt{b}$$</div>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Contoh:</strong></p>
+                            <p>• $2\sqrt{3}$</p>
+                            <p>• $5\sqrt{2}$</p>
+                            <p>• $3\sqrt{7}$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sifat-sifat Bentuk Akar -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-yellow-100 text-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl">3</span>
+                    Sifat-sifat Bentuk Akar
+                </h2>
+                
+                <div class="grid gap-6">
+                    <div class="math-example p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">📋 Sifat-sifat Dasar:</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                                <span class="font-medium">1. Perkalian akar:</span>
+                                <span class="text-xl">$$\sqrt{a} \times \sqrt{b} = \sqrt{a \times b}$$</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                                <span class="font-medium">2. Pembagian akar:</span>
+                                <span class="text-xl">$$\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}$$</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                                <span class="font-medium">3. Akar dari pangkat:</span>
+                                <span class="text-xl">$$\sqrt{a^2} = |a|$$</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                                <span class="font-medium">4. Pangkat akar:</span>
+                                <span class="text-xl">$$(\sqrt{a})^2 = a$$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contoh Soal -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-red-100 text-red-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl">4</span>
+                    Contoh Soal dan Pembahasan
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Soal 1 -->
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">📝 Contoh 1:</h3>
+                        <p class="mb-3"><strong>Soal:</strong> Sederhanakan $\sqrt{18}$</p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="mb-2"><strong>Penyelesaian:</strong></p>
+                            <div class="space-y-2">
+                                <p>$\sqrt{18} = \sqrt{9 \times 2}$</p>
+                                <p>$= \sqrt{9} \times \sqrt{2}$</p>
+                                <p>$= 3\sqrt{2}$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">📝 Contoh 2:</h3>
+                        <p class="mb-3"><strong>Soal:</strong> Hitunglah $\sqrt{12} + \sqrt{27}$</p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="mb-2"><strong>Penyelesaian:</strong></p>
+                            <div class="space-y-2">
+                                <p>$\sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3}$</p>
+                                <p>$\sqrt{27} = \sqrt{9 \times 3} = 3\sqrt{3}$</p>
+                                <p>$\sqrt{12} + \sqrt{27} = 2\sqrt{3} + 3\sqrt{3} = 5\sqrt{3}$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-semibold mb-2">📚 Matematika Kelas 10 SMK</p>
+            <div class="mb-4">
+                <a href="https://atengsani.github.io/akar/home.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    🏠 Beranda
+                </a>
+            </div>
+            <p class="text-gray-400">2025 by Ateng Transani, S.Pd</p>
+        </div>
+    </footer>
+
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e28ac3b5acfd2a',t:'MTc2MDM5NzM1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 
