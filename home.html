@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pembelajaran Bentuk Akar - Matematika Kelas 10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .math-icon {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+        }
+    </style>
+</head>
+<body class="h-full gradient-bg font-sans">
+    <div class="min-h-full flex flex-col">
+        <!-- Header -->
+        <header class="bg-white/10 backdrop-blur-sm border-b border-white/20">
+            <div class="max-w-6xl mx-auto px-4 py-6">
+                <div class="flex items-center space-x-4">
+                    <div class="math-icon w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl font-bold">
+                        √
+                    </div>
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-white">Pembelajaran Bentuk Akar</h1>
+                        <p class="text-white/80 text-sm md:text-base">Matematika Kelas 10</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 max-w-6xl mx-auto px-4 py-8 w-full">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl md:text-2xl font-semibold text-white mb-3">Selamat Datang di Dashboard Pembelajaran</h2>
+                <p class="text-white/90 text-sm md:text-base max-w-2xl mx-auto">
+                    Pilih materi yang ingin Anda pelajari dengan mengklik tombol di bawah ini. Setiap materi dirancang untuk membantu Anda memahami konsep bentuk akar secara bertahap.
+                </p>
+            </div>
+
+            <!-- Navigation Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Pengertian -->
+                <div class="bg-white rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-blue-600 text-xl font-bold">📚</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Pengertian</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Pelajari konsep dasar dan definisi bentuk akar dalam matematika.
+                    </p>
+                    <a href="https://atengsani.github.io/akar/pengertian.html" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200">
+                        Mulai Belajar
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Card 2: Menyederhanakan -->
+                <div class="bg-white rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-green-600 text-xl font-bold">⚡</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Menyederhanakan Bentuk Akar</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Teknik dan cara menyederhanakan bentuk akar menjadi bentuk yang lebih sederhana.
+                    </p>
+                    <a href="https://atengsani.github.io/akar/sederhana.html" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200">
+                        Mulai Belajar
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Card 3: Operasi Hitung -->
+                <div class="bg-white rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-purple-600 text-xl font-bold">🧮</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Operasi Hitung Bentuk Akar</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Pelajari operasi penjumlahan, pengurangan, perkalian, dan pembagian bentuk akar.
+                    </p>
+                    <a href="https://atengsani.github.io/akar/operasi.html" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200">
+                        Mulai Belajar
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Card 4: Akar Sekawan -->
+                <div class="bg-white rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-orange-600 text-xl font-bold">🔗</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Menyederhanakan Akar Sekawan</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Teknik khusus menggunakan konsep akar sekawan untuk menyederhanakan bentuk akar.
+                    </p>
+                    <a href="https://atengsani.github.io/akar/sekawan.html" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200">
+                        Mulai Belajar
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Card 5: Asesmen Sumatif -->
+                <div class="bg-white rounded-2xl p-6 card-hover md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-red-600 text-xl font-bold">📝</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Asesmen Sumatif</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Uji pemahaman Anda dengan mengerjakan soal-soal evaluasi bentuk akar.
+                    </p>
+                    <a href="https://atengsani.github.io/akar/sumatif.html" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200">
+                        Mulai Asesmen
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Progress Info -->
+            <div class="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div class="text-center">
+                    <h3 class="text-lg font-semibold text-white mb-3">💡 Tips Belajar</h3>
+                    <p class="text-white/90 text-sm md:text-base">
+                        Disarankan untuk mempelajari materi secara berurutan mulai dari Pengertian hingga Asesmen Sumatif. 
+                        Pastikan Anda memahami setiap konsep sebelum melanjutkan ke materi berikutnya.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white/5 backdrop-blur-sm border-t border-white/10 mt-8">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+                <p class="text-white/70 text-sm">
+                    2025 by Ateng Transani, S.Pd
+                </p>
+            </div>
+        </footer>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e27fc672eb5f6f',t:'MTc2MDM5NjkwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
