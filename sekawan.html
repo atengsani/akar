@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operasi Hitung Bentuk Akar - Matematika Kelas 10 SMK</title>
+    <title>Menyederhanakan Akar Sekawan - Matematika Kelas 10 SMK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -22,584 +22,345 @@
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        .card-hover:hover {
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .example-box {
-            background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
-            border-left: 4px solid #0ea5e9;
-        }
-        .formula-box {
-            background: linear-gradient(45deg, #fef3c7, #fde68a);
-            border-left: 4px solid #f59e0b;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
     </style>
 </head>
-<body class="min-h-full bg-gray-50">
+<body class="h-full bg-gray-50">
     <!-- Header -->
     <header class="gradient-bg text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-2">📐 Operasi Hitung Bentuk Akar</h1>
-            <p class="text-xl opacity-90">Matematika Kelas 10 SMK</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Penjumlahan</span>
-                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Pengurangan</span>
-                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Perkalian</span>
-                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Pembagian</span>
-            </div>
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">📐 Menyederhanakan Akar Sekawan</h1>
+            <p class="text-xl text-center opacity-90">Matematika Kelas 10 SMK</p>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-10">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-center space-x-8 py-4">
-                <button onclick="showSection('pengertian')" class="nav-btn px-4 py-2 rounded-lg font-medium transition-colors hover:bg-blue-100 hover:text-blue-600">Pengertian</button>
-                <button onclick="showSection('operasi')" class="nav-btn px-4 py-2 rounded-lg font-medium transition-colors hover:bg-blue-100 hover:text-blue-600">Operasi Dasar</button>
-                <button onclick="showSection('contoh')" class="nav-btn px-4 py-2 rounded-lg font-medium transition-colors hover:bg-blue-100 hover:text-blue-600">Contoh Soal</button>
-                <button onclick="showSection('latihan')" class="nav-btn px-4 py-2 rounded-lg font-medium transition-colors hover:bg-blue-100 hover:text-blue-600">Latihan</button>
-            </div>
-        </div>
-    </nav>
-
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Pengertian Section -->
-        <section id="pengertian" class="section-content">
-            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">🎯</span>
-                    Pengertian Bentuk Akar
-                </h2>
+    <main class="container mx-auto px-6 py-8">
+        <!-- Pengertian -->
+        <section class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                🎯 Pengertian Akar Sekawan
+            </h2>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    <strong>Akar sekawan</strong> adalah bentuk yang diperoleh dengan mengubah tanda operasi (+ menjadi - atau sebaliknya) 
+                    pada bentuk akar yang mengandung dua suku. Teknik ini digunakan untuk merasionalkan penyebut yang mengandung bentuk akar.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-green-800 mb-3">Contoh Akar Sekawan:</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Akar sekawan dari $\sqrt{a} + \sqrt{b}$ adalah $\sqrt{a} - \sqrt{b}$</li>
+                        <li>• Akar sekawan dari $\sqrt{a} - \sqrt{b}$ adalah $\sqrt{a} + \sqrt{b}$</li>
+                        <li>• Akar sekawan dari $a + \sqrt{b}$ adalah $a - \sqrt{b}$</li>
+                    </ul>
+                </div>
                 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="formula-box p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4 text-amber-800">Definisi</h3>
-                        <p class="text-gray-700 mb-4">Bentuk akar adalah bilangan yang dinyatakan dalam bentuk $\sqrt[n]{a}$ dimana:</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>$a$ = bilangan yang ditarik akarnya (radikan)</li>
-                            <li>$n$ = indeks akar</li>
-                            <li>$\sqrt{}$ = tanda akar (radikal)</li>
-                        </ul>
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-yellow-800 mb-3">Mengapa Digunakan?</h3>
+                    <p class="text-gray-700">
+                        Akar sekawan digunakan untuk menghilangkan bentuk akar dari penyebut pecahan, 
+                        sehingga hasil akhir menjadi lebih sederhana dan mudah dipahami.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Langkah-langkah -->
+        <section class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                📝 Langkah-langkah Menyederhanakan
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="step-card bg-red-50 border-2 border-red-200 p-6 rounded-lg text-center">
+                    <div class="text-3xl mb-3">1️⃣</div>
+                    <h3 class="text-lg font-semibold text-red-800 mb-2">Identifikasi</h3>
+                    <p class="text-gray-700">Tentukan bentuk akar sekawan dari penyebut</p>
+                </div>
+                
+                <div class="step-card bg-blue-50 border-2 border-blue-200 p-6 rounded-lg text-center">
+                    <div class="text-3xl mb-3">2️⃣</div>
+                    <h3 class="text-lg font-semibold text-blue-800 mb-2">Kalikan</h3>
+                    <p class="text-gray-700">Kalikan pembilang dan penyebut dengan akar sekawan</p>
+                </div>
+                
+                <div class="step-card bg-green-50 border-2 border-green-200 p-6 rounded-lg text-center">
+                    <div class="text-3xl mb-3">3️⃣</div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-2">Sederhanakan</h3>
+                    <p class="text-gray-700">Gunakan rumus $(a+b)(a-b) = a^2 - b^2$</p>
+                </div>
+                
+                <div class="step-card bg-purple-50 border-2 border-purple-200 p-6 rounded-lg text-center">
+                    <div class="text-3xl mb-3">4️⃣</div>
+                    <h3 class="text-lg font-semibold text-purple-800 mb-2">Hasil Akhir</h3>
+                    <p class="text-gray-700">Dapatkan bentuk yang sudah disederhanakan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contoh Soal -->
+        <section class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                💡 Contoh Soal dan Pembahasan
+            </h2>
+            
+            <div class="space-y-8">
+                <!-- Contoh 1 -->
+                <div class="border-l-4 border-indigo-500 pl-6">
+                    <h3 class="text-xl font-semibold text-indigo-800 mb-4">Contoh 1: Bentuk Dasar</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-4">
+                        <p class="text-lg mb-2"><strong>Soal:</strong> Sederhanakan $\frac{1}{\sqrt{5} + \sqrt{3}}$</p>
                     </div>
                     
-                    <div class="example-box p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-800">Contoh Bentuk Akar</h3>
-                        <div class="space-y-3 text-lg">
-                            <p>$\sqrt{4} = 2$</p>
-                            <p>$\sqrt{9} = 3$</p>
-                            <p>$\sqrt{16} = 4$</p>
-                            <p>$\sqrt{25} = 5$</p>
-                            <p>$\sqrt{2}, \sqrt{3}, \sqrt{5}$ (bentuk akar)</p>
+                    <div class="bg-indigo-50 p-6 rounded-lg">
+                        <p class="font-semibold mb-3">Penyelesaian:</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>Langkah 1:</strong> Akar sekawan dari $\sqrt{5} + \sqrt{3}$ adalah $\sqrt{5} - \sqrt{3}$</p>
+                            <p><strong>Langkah 2:</strong> Kalikan pembilang dan penyebut dengan $\sqrt{5} - \sqrt{3}$</p>
+                            <p class="ml-4">$\frac{1}{\sqrt{5} + \sqrt{3}} \times \frac{\sqrt{5} - \sqrt{3}}{\sqrt{5} - \sqrt{3}}$</p>
+                            <p><strong>Langkah 3:</strong> Sederhanakan penyebut menggunakan $(a+b)(a-b) = a^2 - b^2$</p>
+                            <p class="ml-4">$= \frac{\sqrt{5} - \sqrt{3}}{(\sqrt{5})^2 - (\sqrt{3})^2} = \frac{\sqrt{5} - \sqrt{3}}{5 - 3} = \frac{\sqrt{5} - \sqrt{3}}{2}$</p>
+                            <p><strong>Hasil:</strong> $\frac{\sqrt{5} - \sqrt{3}}{2}$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 2 -->
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Contoh 2: Dengan Koefisien</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-4">
+                        <p class="text-lg mb-2"><strong>Soal:</strong> Sederhanakan $\frac{6}{3 + \sqrt{2}}$</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <p class="font-semibold mb-3">Penyelesaian:</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>Langkah 1:</strong> Akar sekawan dari $3 + \sqrt{2}$ adalah $3 - \sqrt{2}$</p>
+                            <p><strong>Langkah 2:</strong> Kalikan pembilang dan penyebut dengan $3 - \sqrt{2}$</p>
+                            <p class="ml-4">$\frac{6}{3 + \sqrt{2}} \times \frac{3 - \sqrt{2}}{3 - \sqrt{2}}$</p>
+                            <p><strong>Langkah 3:</strong> Sederhanakan</p>
+                            <p class="ml-4">$= \frac{6(3 - \sqrt{2})}{(3)^2 - (\sqrt{2})^2} = \frac{18 - 6\sqrt{2}}{9 - 2} = \frac{18 - 6\sqrt{2}}{7}$</p>
+                            <p><strong>Hasil:</strong> $\frac{18 - 6\sqrt{2}}{7}$</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Operasi Section -->
-        <section id="operasi" class="section-content hidden">
-            <div class="grid gap-8">
-                <!-- Penjumlahan dan Pengurangan -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        <span class="text-3xl mr-3">➕</span>
-                        Penjumlahan dan Pengurangan Bentuk Akar
-                    </h2>
-                    
-                    <div class="formula-box p-6 rounded-lg mb-6">
-                        <h3 class="text-xl font-semibold mb-4 text-amber-800">Aturan Dasar</h3>
-                        <p class="text-lg mb-4">Bentuk akar dapat dijumlahkan atau dikurangkan jika memiliki <strong>radikan yang sama</strong>:</p>
-                        <div class="text-xl text-center">
-                            $a\sqrt{c} \pm b\sqrt{c} = (a \pm b)\sqrt{c}$
+        <!-- Latihan Interaktif -->
+        <section class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                🎮 Latihan Interaktif
+            </h2>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg">
+                <div id="quiz-container">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Soal: Sederhanakan bentuk berikut!</h3>
+                        <div class="bg-white p-4 rounded-lg text-center text-xl" id="question">
+                            $\frac{2}{\sqrt{7} + \sqrt{3}}$
                         </div>
                     </div>
                     
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="example-box p-6 rounded-lg">
-                            <h4 class="font-semibold mb-3 text-blue-800">Contoh Penjumlahan:</h4>
-                            <div class="space-y-2 text-lg">
-                                <p>$3\sqrt{2} + 5\sqrt{2} = 8\sqrt{2}$</p>
-                                <p>$2\sqrt{3} + 4\sqrt{3} = 6\sqrt{3}$</p>
-                            </div>
-                        </div>
-                        
-                        <div class="example-box p-6 rounded-lg">
-                            <h4 class="font-semibold mb-3 text-blue-800">Contoh Pengurangan:</h4>
-                            <div class="space-y-2 text-lg">
-                                <p>$7\sqrt{5} - 3\sqrt{5} = 4\sqrt{5}$</p>
-                                <p>$6\sqrt{7} - 2\sqrt{7} = 4\sqrt{7}$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Perkalian -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        <span class="text-3xl mr-3">✖️</span>
-                        Perkalian Bentuk Akar
-                    </h2>
-                    
-                    <div class="formula-box p-6 rounded-lg mb-6">
-                        <h3 class="text-xl font-semibold mb-4 text-amber-800">Aturan Perkalian</h3>
-                        <div class="space-y-3 text-lg">
-                            <p>$\sqrt{a} \times \sqrt{b} = \sqrt{a \times b}$</p>
-                            <p>$m\sqrt{a} \times n\sqrt{b} = mn\sqrt{ab}$</p>
-                        </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <button onclick="checkAnswer('A')" class="answer-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg transition-colors" data-answer="A">
+                            A) $\frac{2(\sqrt{7} - \sqrt{3})}{4}$
+                        </button>
+                        <button onclick="checkAnswer('B')" class="answer-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg transition-colors" data-answer="B">
+                            B) $\frac{\sqrt{7} - \sqrt{3}}{2}$
+                        </button>
+                        <button onclick="checkAnswer('C')" class="answer-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg transition-colors" data-answer="C">
+                            C) $\frac{2(\sqrt{7} + \sqrt{3})}{4}$
+                        </button>
+                        <button onclick="checkAnswer('D')" class="answer-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg transition-colors" data-answer="D">
+                            D) $\frac{2(\sqrt{7} - \sqrt{3})}{10}$
+                        </button>
                     </div>
                     
-                    <div class="example-box p-6 rounded-lg">
-                        <h4 class="font-semibold mb-3 text-blue-800">Contoh:</h4>
-                        <div class="space-y-3 text-lg">
-                            <p>$\sqrt{2} \times \sqrt{8} = \sqrt{16} = 4$</p>
-                            <p>$3\sqrt{2} \times 2\sqrt{3} = 6\sqrt{6}$</p>
-                            <p>$\sqrt{12} \times \sqrt{3} = \sqrt{36} = 6$</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pembagian -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        <span class="text-3xl mr-3">➗</span>
-                        Pembagian Bentuk Akar
-                    </h2>
-                    
-                    <div class="formula-box p-6 rounded-lg mb-6">
-                        <h3 class="text-xl font-semibold mb-4 text-amber-800">Aturan Pembagian</h3>
-                        <div class="space-y-3 text-lg">
-                            <p>$\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}$</p>
-                            <p>$\frac{m\sqrt{a}}{n\sqrt{b}} = \frac{m}{n}\sqrt{\frac{a}{b}}$</p>
-                        </div>
-                    </div>
-                    
-                    <div class="example-box p-6 rounded-lg">
-                        <h4 class="font-semibold mb-3 text-blue-800">Contoh:</h4>
-                        <div class="space-y-3 text-lg">
-                            <p>$\frac{\sqrt{12}}{\sqrt{3}} = \sqrt{\frac{12}{3}} = \sqrt{4} = 2$</p>
-                            <p>$\frac{6\sqrt{8}}{2\sqrt{2}} = 3\sqrt{\frac{8}{2}} = 3\sqrt{4} = 6$</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contoh Soal Section -->
-        <section id="contoh" class="section-content hidden">
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">📝</span>
-                    Contoh Soal dan Pembahasan
-                </h2>
-                
-                <div class="space-y-8">
-                    <div class="border-l-4 border-green-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-green-700">Soal 1: Penjumlahan</h3>
-                        <p class="text-lg mb-3">Hitunglah: $2\sqrt{3} + 5\sqrt{3} - \sqrt{3}$</p>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>$2\sqrt{3} + 5\sqrt{3} - \sqrt{3}$</p>
-                                <p>$= (2 + 5 - 1)\sqrt{3}$</p>
-                                <p class="font-bold text-green-700">$= 6\sqrt{3}$</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-blue-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Soal 2: Perkalian</h3>
-                        <p class="text-lg mb-3">Hitunglah: $\sqrt{8} \times \sqrt{2}$</p>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>$\sqrt{8} \times \sqrt{2}$</p>
-                                <p>$= \sqrt{8 \times 2}$</p>
-                                <p>$= \sqrt{16}$</p>
-                                <p class="font-bold text-blue-700">$= 4$</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-purple-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Soal 3: Pembagian</h3>
-                        <p class="text-lg mb-3">Hitunglah: $\frac{\sqrt{18}}{\sqrt{2}}$</p>
-                        <div class="bg-purple-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>$\frac{\sqrt{18}}{\sqrt{2}}$</p>
-                                <p>$= \sqrt{\frac{18}{2}}$</p>
-                                <p>$= \sqrt{9}$</p>
-                                <p class="font-bold text-purple-700">$= 3$</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-red-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-red-700">Soal 4: Menyederhanakan Bentuk Akar (Level Lanjut)</h3>
-                        <p class="text-lg mb-3">Sederhanakan: $\sqrt{72} + \sqrt{32} - \sqrt{8}$</p>
-                        <div class="bg-red-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>Pertama, sederhanakan setiap bentuk akar:</p>
-                                <p>$\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}$</p>
-                                <p>$\sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}$</p>
-                                <p>$\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}$</p>
-                                <p>Substitusi ke persamaan:</p>
-                                <p>$6\sqrt{2} + 4\sqrt{2} - 2\sqrt{2}$</p>
-                                <p>$= (6 + 4 - 2)\sqrt{2}$</p>
-                                <p class="font-bold text-red-700">$= 8\sqrt{2}$</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-indigo-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">Soal 5: Perkalian Kompleks</h3>
-                        <p class="text-lg mb-3">Hitunglah: $(2\sqrt{3} + \sqrt{2})(3\sqrt{3} - 2\sqrt{2})$</p>
-                        <div class="bg-indigo-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>Gunakan sifat distributif (FOIL):</p>
-                                <p>$= 2\sqrt{3} \times 3\sqrt{3} + 2\sqrt{3} \times (-2\sqrt{2}) + \sqrt{2} \times 3\sqrt{3} + \sqrt{2} \times (-2\sqrt{2})$</p>
-                                <p>$= 6\sqrt{9} - 4\sqrt{6} + 3\sqrt{6} - 2\sqrt{4}$</p>
-                                <p>$= 6 \times 3 - 4\sqrt{6} + 3\sqrt{6} - 2 \times 2$</p>
-                                <p>$= 18 - \sqrt{6} - 4$</p>
-                                <p class="font-bold text-indigo-700">$= 14 - \sqrt{6}$</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-orange-500 pl-6">
-                        <h3 class="text-xl font-semibold mb-3 text-orange-700">Soal 6: Rasionalisasi Penyebut</h3>
-                        <p class="text-lg mb-3">Rasionalkan: $\frac{6}{\sqrt{3} + 1}$</p>
-                        <div class="bg-orange-50 p-4 rounded-lg">
-                            <p class="font-semibold mb-2">Pembahasan:</p>
-                            <div class="space-y-2">
-                                <p>Kalikan pembilang dan penyebut dengan sekawan penyebut:</p>
-                                <p>Sekawan dari $(\sqrt{3} + 1)$ adalah $(\sqrt{3} - 1)$</p>
-                                <p>$\frac{6}{\sqrt{3} + 1} \times \frac{\sqrt{3} - 1}{\sqrt{3} - 1}$</p>
-                                <p>$= \frac{6(\sqrt{3} - 1)}{(\sqrt{3} + 1)(\sqrt{3} - 1)}$</p>
-                                <p>$= \frac{6\sqrt{3} - 6}{(\sqrt{3})^2 - 1^2}$</p>
-                                <p>$= \frac{6\sqrt{3} - 6}{3 - 1}$</p>
-                                <p>$= \frac{6\sqrt{3} - 6}{2}$</p>
-                                <p class="font-bold text-orange-700">$= 3\sqrt{3} - 3$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latihan Section -->
-        <section id="latihan" class="section-content hidden">
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">🎯</span>
-                    Latihan Soal Interaktif
-                </h2>
-                
-                <div id="quiz-container" class="space-y-6">
-                    <!-- Level Dasar -->
-                    <div class="bg-green-100 p-4 rounded-lg mb-4">
-                        <h3 class="text-lg font-bold text-green-800 mb-2">🟢 Level Dasar</h3>
-                        <p class="text-green-700">Soal-soal dasar untuk memahami konsep awal</p>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 1:</h3>
-                        <p class="text-lg mb-4">Hitunglah: $3\sqrt{5} + 2\sqrt{5}$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q1" value="a" class="text-blue-600">
-                                <span>$5\sqrt{5}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q1" value="b" class="text-blue-600">
-                                <span>$6\sqrt{10}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q1" value="c" class="text-blue-600">
-                                <span>$5\sqrt{10}$</span>
-                            </label>
-                        </div>
-                        <div id="result1" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 2:</h3>
-                        <p class="text-lg mb-4">Hitunglah: $\sqrt{3} \times \sqrt{12}$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q2" value="a" class="text-blue-600">
-                                <span>$3$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q2" value="b" class="text-blue-600">
-                                <span>$6$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q2" value="c" class="text-blue-600">
-                                <span>$\sqrt{15}$</span>
-                            </label>
-                        </div>
-                        <div id="result2" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <!-- Level Menengah -->
-                    <div class="bg-yellow-100 p-4 rounded-lg mb-4 mt-8">
-                        <h3 class="text-lg font-bold text-yellow-800 mb-2">🟡 Level Menengah</h3>
-                        <p class="text-yellow-700">Soal dengan penyederhanaan bentuk akar</p>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 3:</h3>
-                        <p class="text-lg mb-4">Sederhanakan: $\sqrt{50} + \sqrt{18} - \sqrt{2}$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q3" value="a" class="text-blue-600">
-                                <span>$8\sqrt{2}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q3" value="b" class="text-blue-600">
-                                <span>$6\sqrt{2}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q3" value="c" class="text-blue-600">
-                                <span>$7\sqrt{2}$</span>
-                            </label>
-                        </div>
-                        <div id="result3" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 4:</h3>
-                        <p class="text-lg mb-4">Hitunglah: $2\sqrt{3} \times 3\sqrt{6}$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q4" value="a" class="text-blue-600">
-                                <span>$18\sqrt{2}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q4" value="b" class="text-blue-600">
-                                <span>$6\sqrt{18}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q4" value="c" class="text-blue-600">
-                                <span>$12\sqrt{3}$</span>
-                            </label>
-                        </div>
-                        <div id="result4" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <!-- Level Lanjut -->
-                    <div class="bg-red-100 p-4 rounded-lg mb-4 mt-8">
-                        <h3 class="text-lg font-bold text-red-800 mb-2">🔴 Level Lanjut</h3>
-                        <p class="text-red-700">Soal kompleks dengan perkalian dua suku dan rasionalisasi</p>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 5:</h3>
-                        <p class="text-lg mb-4">Hitunglah: $(\sqrt{5} + 2)(\sqrt{5} - 1)$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q5" value="a" class="text-blue-600">
-                                <span>$3 + \sqrt{5}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q5" value="b" class="text-blue-600">
-                                <span>$7 - \sqrt{5}$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q5" value="c" class="text-blue-600">
-                                <span>$5 + \sqrt{5}$</span>
-                            </label>
-                        </div>
-                        <div id="result5" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <div class="quiz-question bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Soal 6:</h3>
-                        <p class="text-lg mb-4">Rasionalkan: $\frac{4}{\sqrt{2} + 1}$</p>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q6" value="a" class="text-blue-600">
-                                <span>$4\sqrt{2} - 4$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q6" value="b" class="text-blue-600">
-                                <span>$2\sqrt{2} + 2$</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="radio" name="q6" value="c" class="text-blue-600">
-                                <span>$4\sqrt{2} + 4$</span>
-                            </label>
-                        </div>
-                        <div id="result6" class="mt-4 hidden"></div>
-                    </div>
-                    
-                    <button onclick="checkAnswers()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-                        Periksa Jawaban
+                    <div id="result" class="hidden p-4 rounded-lg text-center font-semibold"></div>
+                    <button onclick="nextQuestion()" id="next-btn" class="hidden bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg mt-4">
+                        Soal Berikutnya
                     </button>
-                    
-                    <div id="quiz-results" class="hidden mt-6 p-6 rounded-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips dan Trik -->
+        <section class="bg-white rounded-lg card-shadow p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                💡 Tips dan Trik
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                    <h3 class="text-lg font-semibold text-yellow-800 mb-3">🔍 Tips Mengingat</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Akar sekawan selalu mengubah tanda tengah</li>
+                        <li>• Gunakan rumus $(a+b)(a-b) = a^2 - b^2$</li>
+                        <li>• Selalu kalikan pembilang dan penyebut</li>
+                        <li>• Periksa apakah hasil bisa disederhanakan lagi</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">⚡ Kesalahan Umum</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Lupa mengalikan pembilang dengan akar sekawan</li>
+                        <li>• Salah menentukan akar sekawan</li>
+                        <li>• Tidak menyederhanakan hasil akhir</li>
+                        <li>• Keliru dalam operasi aljabar</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-xl font-semibold mb-4">📚 Tips Belajar Bentuk Akar</h3>
-            <div class="grid md:grid-cols-3 gap-6 text-sm">
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">🎯 Pahami Konsep Dasar</h4>
-                    <p>Kuasai definisi dan sifat-sifat bentuk akar sebelum mengerjakan soal</p>
-                </div>
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">✏️ Latihan Rutin</h4>
-                    <p>Kerjakan berbagai variasi soal untuk meningkatkan pemahaman</p>
-                </div>
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">🤝 Diskusi</h4>
-                    <p>Diskusikan dengan teman atau guru jika mengalami kesulitan</p>
-                </div>
-            </div>
-            <div class="mt-6 flex flex-col items-center space-y-4">
-                <a href="https://atengsani.github.io/akar/home.html" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center space-x-2">
-                    <span>🏠</span>
-                    <span>Beranda</span>
+    <footer class="gradient-bg text-white py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg">📚 Matematika Kelas 10 SMK - Menyederhanakan Akar Sekawan</p>
+            <p class="opacity-75 mt-2">Belajar matematika jadi lebih mudah dan menyenangkan!</p>
+            <div class="mt-4">
+                <a href="https://atengsani.github.io/akar/home.html" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                    🏠 Beranda
                 </a>
-                <p class="text-gray-400">© 2025 by Ateng Transani, S.Pd</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white border-opacity-30">
+                <p class="text-sm opacity-75">© 2025 by Ateng Transani, S.Pd</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navigation functionality
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section-content');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.remove('hidden');
-            
-            // Update navigation buttons
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(btn => {
-                btn.classList.remove('bg-blue-600', 'text-white');
-                btn.classList.add('text-gray-600');
-            });
-            
-            // Highlight active button
-            event.target.classList.add('bg-blue-600', 'text-white');
-            event.target.classList.remove('text-gray-600');
-            
-            // Re-render MathJax for the new content
-            if (window.MathJax) {
-                MathJax.typesetPromise();
+        const questions = [
+            {
+                question: "$\\frac{2}{\\sqrt{7} + \\sqrt{3}}$",
+                options: {
+                    A: "$\\frac{2(\\sqrt{7} - \\sqrt{3})}{4}$",
+                    B: "$\\frac{\\sqrt{7} - \\sqrt{3}}{2}$",
+                    C: "$\\frac{2(\\sqrt{7} + \\sqrt{3})}{4}$",
+                    D: "$\\frac{2(\\sqrt{7} - \\sqrt{3})}{10}$"
+                },
+                correct: "A",
+                explanation: "Akar sekawan dari $\\sqrt{7} + \\sqrt{3}$ adalah $\\sqrt{7} - \\sqrt{3}$. Setelah dikalikan: $\\frac{2(\\sqrt{7} - \\sqrt{3})}{7-3} = \\frac{2(\\sqrt{7} - \\sqrt{3})}{4}$"
+            },
+            {
+                question: "$\\frac{5}{2 + \\sqrt{5}}$",
+                options: {
+                    A: "$\\frac{5(2 - \\sqrt{5})}{-1}$",
+                    B: "$\\frac{10 - 5\\sqrt{5}}{-1}$",
+                    C: "$\\frac{5(2 + \\sqrt{5})}{4}$",
+                    D: "$5\\sqrt{5} - 10$"
+                },
+                correct: "D",
+                explanation: "Kalikan dengan akar sekawan $2 - \\sqrt{5}$: $\\frac{5(2 - \\sqrt{5})}{4-5} = \\frac{10 - 5\\sqrt{5}}{-1} = 5\\sqrt{5} - 10$"
+            },
+            {
+                question: "$\\frac{3}{\\sqrt{6} - \\sqrt{2}}$",
+                options: {
+                    A: "$\\frac{3(\\sqrt{6} + \\sqrt{2})}{4}$",
+                    B: "$\\frac{3(\\sqrt{6} + \\sqrt{2})}{8}$",
+                    C: "$\\frac{\\sqrt{6} + \\sqrt{2}}{4}$",
+                    D: "$\\frac{3(\\sqrt{6} - \\sqrt{2})}{4}$"
+                },
+                correct: "A",
+                explanation: "Akar sekawan dari $\\sqrt{6} - \\sqrt{2}$ adalah $\\sqrt{6} + \\sqrt{2}$. Hasil: $\\frac{3(\\sqrt{6} + \\sqrt{2})}{6-2} = \\frac{3(\\sqrt{6} + \\sqrt{2})}{4}$"
             }
-        }
+        ];
 
-        // Quiz functionality
-        function checkAnswers() {
-            const answers = {
-                q1: 'a', // 5√5
-                q2: 'b', // 6
-                q3: 'b', // 6√2 (√50 = 5√2, √18 = 3√2, jadi 5√2 + 3√2 - √2 = 7√2, tapi saya akan periksa lagi: seharusnya jawabannya 6√2)
-                q4: 'a', // 18√2 (2√3 × 3√6 = 6√18 = 6√(9×2) = 6×3√2 = 18√2)
-                q5: 'a', // 3 + √5 ((√5 + 2)(√5 - 1) = 5 - √5 + 2√5 - 2 = 3 + √5)
-                q6: 'a'  // 4√2 - 4 (rasionalisasi dengan mengalikan (√2 - 1)/(√2 - 1))
-            };
+        let currentQuestion = 0;
+        let answered = false;
+
+        function checkAnswer(selected) {
+            if (answered) return;
             
-            let score = 0;
-            let totalQuestions = Object.keys(answers).length;
+            answered = true;
+            const correct = questions[currentQuestion].correct;
+            const resultDiv = document.getElementById('result');
+            const nextBtn = document.getElementById('next-btn');
             
-            // Check each question
-            for (let question in answers) {
-                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
-                const resultDiv = document.getElementById(`result${question.slice(1)}`);
-                
-                if (selectedAnswer) {
-                    if (selectedAnswer.value === answers[question]) {
-                        score++;
-                        resultDiv.innerHTML = '<p class="text-green-600 font-semibold">✅ Benar!</p>';
-                        resultDiv.classList.remove('hidden');
-                    } else {
-                        resultDiv.innerHTML = '<p class="text-red-600 font-semibold">❌ Salah. Coba lagi!</p>';
-                        resultDiv.classList.remove('hidden');
-                    }
-                } else {
-                    resultDiv.innerHTML = '<p class="text-yellow-600 font-semibold">⚠️ Belum dijawab</p>';
-                    resultDiv.classList.remove('hidden');
-                }
+            // Reset all buttons
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('bg-green-500', 'bg-red-500');
+                btn.classList.add('bg-gray-400');
+                btn.disabled = true;
+            });
+            
+            // Highlight correct and selected answers
+            document.querySelector(`[data-answer="${correct}"]`).classList.remove('bg-gray-400');
+            document.querySelector(`[data-answer="${correct}"]`).classList.add('bg-green-500');
+            
+            if (selected !== correct) {
+                document.querySelector(`[data-answer="${selected}"]`).classList.remove('bg-gray-400');
+                document.querySelector(`[data-answer="${selected}"]`).classList.add('bg-red-500');
             }
             
-            // Show overall results
-            const resultsDiv = document.getElementById('quiz-results');
-            const percentage = Math.round((score / totalQuestions) * 100);
-            
-            let resultClass = 'bg-red-100 border-red-500 text-red-700';
-            let emoji = '😞';
-            let message = 'Terus belajar!';
-            
-            if (percentage >= 80) {
-                resultClass = 'bg-green-100 border-green-500 text-green-700';
-                emoji = '🎉';
-                message = 'Excellent!';
-            } else if (percentage >= 60) {
-                resultClass = 'bg-yellow-100 border-yellow-500 text-yellow-700';
-                emoji = '👍';
-                message = 'Good job!';
+            // Show result
+            resultDiv.classList.remove('hidden');
+            if (selected === correct) {
+                resultDiv.className = 'p-4 rounded-lg text-center font-semibold bg-green-100 text-green-800';
+                resultDiv.innerHTML = '🎉 Benar! ' + questions[currentQuestion].explanation;
+            } else {
+                resultDiv.className = 'p-4 rounded-lg text-center font-semibold bg-red-100 text-red-800';
+                resultDiv.innerHTML = '❌ Salah. Jawaban yang benar: ' + correct + '<br>' + questions[currentQuestion].explanation;
             }
             
-            resultsDiv.innerHTML = `
-                <div class="border-l-4 ${resultClass} p-4">
-                    <h4 class="font-bold text-lg">${emoji} Hasil Quiz</h4>
-                    <p>Skor: ${score}/${totalQuestions} (${percentage}%)</p>
-                    <p class="font-semibold">${message}</p>
-                </div>
-            `;
-            resultsDiv.classList.remove('hidden');
+            // Show next button if not last question
+            if (currentQuestion < questions.length - 1) {
+                nextBtn.classList.remove('hidden');
+            }
             
             // Re-render MathJax
-            if (window.MathJax) {
-                MathJax.typesetPromise();
-            }
+            MathJax.typesetPromise([resultDiv]);
         }
 
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Show first section by default
-            showSection('pengertian');
-            
-            // Set first nav button as active
-            const firstNavBtn = document.querySelector('.nav-btn');
-            firstNavBtn.classList.add('bg-blue-600', 'text-white');
-            firstNavBtn.classList.remove('text-gray-600');
-        });
-
-        // Handle radio button changes for immediate feedback
-        document.addEventListener('change', function(e) {
-            if (e.target.type === 'radio') {
-                // Clear previous results when user changes answer
-                const questionNum = e.target.name.slice(1);
-                const resultDiv = document.getElementById(`result${questionNum}`);
-                resultDiv.classList.add('hidden');
-                
-                // Clear overall results
-                const resultsDiv = document.getElementById('quiz-results');
-                resultsDiv.classList.add('hidden');
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion >= questions.length) {
+                currentQuestion = 0; // Reset to first question
             }
+            
+            answered = false;
+            const question = questions[currentQuestion];
+            
+            // Update question
+            document.getElementById('question').innerHTML = question.question;
+            
+            // Update options
+            const buttons = document.querySelectorAll('.answer-btn');
+            buttons.forEach((btn, index) => {
+                const letter = String.fromCharCode(65 + index); // A, B, C, D
+                btn.innerHTML = `${letter}) ${question.options[letter]}`;
+                btn.classList.remove('bg-gray-400', 'bg-green-500', 'bg-red-500');
+                btn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                btn.disabled = false;
+            });
+            
+            // Hide result and next button
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            
+            // Re-render MathJax
+            MathJax.typesetPromise([document.getElementById('question'), ...buttons]);
+        }
+
+        // Initialize MathJax rendering
+        window.addEventListener('load', function() {
+            MathJax.typesetPromise();
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e2a7753749fd2a',t:'MTc2MDM5ODUzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e2c41b44f6ce31',t:'MTc2MDM5OTcwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
